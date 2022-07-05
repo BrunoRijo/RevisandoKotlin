@@ -9,18 +9,18 @@ Linkedin: https://linkedin.com/in/brunorijo
 
 fun main(args: Array<String>){
     println(" - What day is today?")
-    dayOfWeek(Calendar.getInstance().get(Calendar.DAY_OF_WEEK))
+    println("- Today is ${dayOfWeek()}")
 }
 
-fun dayOfWeek(day: Int) {
-    when (day){
-        1 -> println("Sunday/Domingo")
-        2 -> println("Monday/Segunda-feira")
-        3 -> println("Tuesday/Terça-feira")
-        4 -> println("Wednesday/Quarta-feira")
-        5 -> println("Thursday/Quinta-feira")
-        6 -> println("Friday/Sexta-feira")
-        else -> println("Saturday/Sábado")
+fun dayOfWeek() : String {
+    return when (Calendar.getInstance().get(Calendar.DAY_OF_WEEK)){
+        1 -> "Sunday/Domingo"
+        2 -> "Monday/Segunda-feira"
+        3 -> "Tuesday/Terça-feira"
+        4 -> "Wednesday/Quarta-feira"
+        5 -> "Thursday/Quinta-feira"
+        6 -> "Friday/Sexta-feira"
+        else -> "Saturday/Sábado"
     }
 }
 
