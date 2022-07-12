@@ -18,6 +18,9 @@ Let’s put this into practice using building materials and a building that need
     Hint: Use reflection to get the class and simple name: instance::class.simpleName
 8. Create a main function and make a building using Wood.
 9. If you did this correctly, running main() will print something like “400 Wood required”.
+10. Create a generic function for type BaseBuildingMaterial and call it isSmallBuilding,
+    which takes a Building with a building material T as an argument. If the materials
+    needed are less than 500, print "small building", otherwise, print "large building"
 * */
 
 fun main() {
@@ -32,6 +35,8 @@ class Building<T>(material: BaseBuildingsMaterial){
             "and the number of material is ${actualMaterialsNeeded}")
 }
 
-open class BaseBuildingsMaterial(var numberNeeded : Int = 1) {}
+open class BaseBuildingsMaterial(var numberNeeded : Int = 1) {
+    fun <T> isSmallBiulding(b: Building<T>)=  if (b.actualMaterialsNeeded >= 500) println("small building") else println("large building")
+}
 class Wood: BaseBuildingsMaterial(4){}
 class Brick: BaseBuildingsMaterial(8){}
